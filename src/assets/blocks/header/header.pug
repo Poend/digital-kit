@@ -1,1 +1,41 @@
 header.header
+    .container 
+        .header-top
+            .header-top__logo   
+                img(src="../assets/images/logotype.svg", alt="logo")
+            .header-top__contacts
+                a.header-top__phone(href="tel:+79182860112") +7 918 286 01 12
+                a.header-top__order.order-button(href="#") Оставить заявку
+        .header-bottom 
+            .header-bottom__categories
+                a.categories-link(href="#", data-target="digital") Digital
+                a.categories-link(href="#", data-target="influence") Influence
+            .header-bottom__nav
+                menu
+                    nav
+                       ul
+                        li.nav-item
+                            a.nav-item__link.default-link(href="#") О нас
+                        li.nav-item
+                            a.nav-item__link.default-link(href="#") Услуги
+                            ul.sub-menu
+                                li.sub-menu__item
+                                    a.sub-menu__link.default-link(href="#") Разработка и создание сайтов
+                                li.sub-menu__item
+                                    a.sub-menu__link.default-link(href="#") Продвижение
+                                li.sub-menu__item
+                                    a.sub-menu__link.default-link(href="#") SMM
+                                li.sub-menu__item
+                                    a.sub-menu__link.default-link(href="#") Веб-аналитика
+                                li.sub-menu__item
+                                    a.sub-menu__link.default-link(href="#") Контекст
+                                li.sub-menu__item
+                                    a.sub-menu__link.default-link(href="#") Обучение
+                        li.nav-item
+                            a.nav-item__link.default-link(href="#") Кейсы
+                        li.nav-item
+                            a.nav-item__link.default-link(href="#") Контакты
+                .social-links
+                    a.social-links__vk(href="#")
+                    a.social-links__instagram(href="#")
+
