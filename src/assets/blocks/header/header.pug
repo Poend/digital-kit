@@ -1,23 +1,26 @@
 header.header
-    .container 
+    .header-container.container 
         .header-top
             .header-top__logo   
-                img(src="../assets/images/logotype.svg", alt="logo")
+                a(href="#")
+                    img(src="../assets/icons/logotype.svg", alt="logo")
             .header-top__contacts
-                a.header-top__phone(href="tel:+79182860112") +7 918 286 01 12
-                a.header-top__order.order-button(href="#") Оставить заявку
+                a.header-top__wrapper-phone(href="tel:+79182860112")
+                    span.header-top__phone +7 918 286 01 12
+                a.header-top__wrapper-order(href="#")
+                    .header-top__order.order-button Оставить заявку              
         .header-bottom 
             .header-bottom__categories
-                a.categories-link(href="#", data-target="digital") Digital
+                a.categories-link.categories-link__active(href="#", data-target="digital") Digital
                 a.categories-link(href="#", data-target="influence") Influence
             .header-bottom__nav
                 menu
                     nav
-                       ul
-                        li.nav-item
-                            a.nav-item__link.default-link(href="#") О нас
-                        li.nav-item
-                            a.nav-item__link.default-link(href="#") Услуги
+                       ul.nav-list
+                        li.nav-list__item
+                            a.nav-list-item__link.default-link(href="#") О нас
+                        li.nav-list__item
+                            a.nav-list-item__link.default-link(href="#") Услуги
                             ul.sub-menu
                                 li.sub-menu__item
                                     a.sub-menu__link.default-link(href="#") Разработка и создание сайтов
@@ -31,11 +34,11 @@ header.header
                                     a.sub-menu__link.default-link(href="#") Контекст
                                 li.sub-menu__item
                                     a.sub-menu__link.default-link(href="#") Обучение
-                        li.nav-item
-                            a.nav-item__link.default-link(href="#") Кейсы
-                        li.nav-item
-                            a.nav-item__link.default-link(href="#") Контакты
-                .social-links
-                    a.social-links__vk(href="#")
-                    a.social-links__instagram(href="#")
+                        li.nav-list__item
+                            a.nav-list-item__link.default-link(href="#") Кейсы
+                        li.nav-list__item
+                            a.nav-list-item__link.default-link(href="#") Контакты
+                        li.nav-list__item.nav-list__social-links 
+                            a.social-links__vk(href="#", target="_blank")
+                            a.social-links__instagram(href="#", target="_blank")
 

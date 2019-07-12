@@ -9,6 +9,29 @@
 
 @import '../blocks/popup/popup'
 
+body
+  width: 100%
+*
+  display: flex
+  font-family: Proxima Nova !important
+  box-sizing: border-box
+  &:hover
+    transition: all .3s
+title
+  display: none
+.app, .app__header, header
+  width: 100%
+.app
+  flex-direction: column
+.container
+  flex-direction: column
+  margin: auto
+.custom-container-1
+  width: 100%
+  max-width: 850px
+.custom-container-2
+  width: 100%
+  max-width: 1070px
 a
   text-decoration: none
   &:hover
@@ -16,7 +39,327 @@ a
 .default-link
   color: $lightgray
   font-size: 18px
-  font-family: Proxima Nova
   font-weight: 300
   &:hover
     color: $darkgray
+
+// header
+menu, nav
+  display: flex
+  justify-content: flex-end
+  width: 100%
+.header
+  position: absolute
+  background: rgba(#f6f6f6, .5)
+  border-bottom: 1px solid $lightgray
+  &-top
+    padding: 25px 0
+    justify-content: space-between
+    &__contacts
+      width: auto
+    &__phone
+      margin-left: 10px
+      color: $lightgray
+      font-weight: 500
+      font-size: 18px
+      align-items: center
+      max-height: 52px
+    &__wrapper-phone
+      justify-content: flex-end
+      box-sizing: border-box
+      display: flex
+      align-items: center
+      &:before
+        content: ""
+        display: flex
+        background: url('../icons/phone.svg') no-repeat center
+        width: 28px
+        height: 28px
+        box-sizing: border-box
+      &:hover span
+        background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+        background-clip: text
+        -webkit-text-fill-color: transparent
+        color: #c800ff
+    &__order
+      margin-left: 20px
+      font-size: 18px
+      color: $purple
+      font-weight: 600
+      text-transform: uppercase
+      border: 4px solid $purple
+      // border-image: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+      // border-image-slice: 1
+      border-radius: 100px
+      align-items: center
+      height: 100%
+      max-height: 56px
+      padding: 20px
+    &__wrapper-order
+      margin-left: 20px
+      justify-content: flex-end
+      box-sizing: border-box
+      display: flex
+      align-items: center
+      &:before
+        content: ""
+        display: flex
+        background: url('../icons/mail.svg') no-repeat center
+        border: 4px solid $purple
+        padding: 20px
+        height: 56px
+        width: 56px
+        border-radius: 100px
+        box-sizing: border-box
+  &-bottom 
+    padding: 15px 0
+    &__categories
+      width: 100%
+      max-width: 200px
+      justify-content: space-between
+    &__nav
+      width: 100%
+      justify-content: flex-end
+.categories-link
+  text-transform: uppercase
+  color: $lightgray
+  align-items: center
+  &__active
+    color: #000
+  &:hover
+    color: #000
+.sub-menu
+  background: $bg-lightgray
+  border-radius: 0px 0px 12px 12px
+  position: absolute
+  flex-direction: column
+  display: none
+  transform: translateY(45px) translateX(-50%)
+  left: 50%
+  opacity: 0
+  width: 100%
+  min-width: 280px
+  padding: 0 40px
+  &__item
+    margin: 25px 0
+    justify-content: center
+    text-align: center
+  &__link
+    line-height: 27px
+    font-size: 18px
+    color: $lightgray
+.nav-list
+  width: 100%
+  max-width: 600px
+  justify-content: space-between
+  align-items: center
+  &__item
+    position: relative
+  &-item 
+    &__link
+  &__social-links
+    .social-links
+      &__vk
+        width: 24px
+        height: 23px
+        mask-image: url('../icons/vk-logo.svg')
+        mask-size: cover
+        background: $lightgray
+        &:hover
+          background: $darkgray
+      &__instagram
+        margin-left: 20px
+        width: 24px
+        height: 23px
+        mask-image: url('../icons/insta-logo.svg')
+        mask-size: cover
+        background: $lightgray
+        &:hover
+          background: $darkgray
+
+// footer
+.footer
+  background: $darkgray
+  width: 100%
+  &-container
+    width: 100%
+    padding: 110px 0
+    position: relative
+    flex-direction: row
+  &-logo
+    justify-content: space-between
+    width: 100%
+    max-width: 220px
+    flex-direction: column
+    &__desc
+      font-size: 12px
+      color: #fff
+      font-weight: 300
+      justify-content: center
+      text-align: center
+      line-height: 17px
+  &-divider
+    margin: 0 50px
+    background: #fff
+    height: 107px
+    width: 1px
+  &-links
+    width: 100%
+    flex-direction: column
+    justify-content: space-around
+    &__contacts
+      max-width: 650px
+      width: 100%
+      justify-content: space-between
+    &__phone
+      color: #fff
+      font-size: 18px
+      text-transform: uppercase
+      font-weight: 500
+      margin-left: 10px
+      &:hover
+        color: $purple
+    &__wrapper-phone
+      justify-content: flex-end
+      box-sizing: border-box
+      display: flex
+      align-items: center
+      &:before
+        content: ""
+        display: flex
+        width: 28px
+        height: 28px
+        box-sizing: border-box
+        mask-image: url('../icons/phone.svg')
+        mask-size: cover
+        background: #fff
+    &__mail
+      color: #fff
+      font-size: 18px
+      font-weight: 500
+      margin-left: 10px
+      border-bottom: 1px solid rgba(#fff,0.5)
+      &:hover
+        color: $purple
+        border-bottom: 1px solid $purple
+    &__wrapper-mail
+      justify-content: flex-end
+      box-sizing: border-box
+      display: flex
+      align-items: center
+      &:before
+        content: ""
+        display: flex
+        mask-image: url('../icons/mail.svg')
+        mask-size: cover
+        background: #fff
+        width: 24px
+        height: 24px
+        box-sizing: border-box
+    &__order
+      color: #fff
+      border-radius: 50px
+      box-shadow: 0 4px 4px rgba(#000, 0.25)
+      align-items: center
+      padding: 20px
+      line-height: 27px
+      font-size: 18px
+      text-transform: uppercase
+      max-height: 56px
+      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+    &__socials 
+      .social-links
+        &__vk
+          width: 24px
+          height: 23px
+          mask-image: url('../icons/vk-logo.svg')
+          mask-size: cover
+          background: #fff
+          &:hover
+            background: $purple
+        &__instagram
+          margin-left: 20px
+          width: 24px
+          height: 23px
+          mask-image: url('../icons/insta-logo.svg')
+          mask-size: cover
+          background: #fff
+          &:hover
+            background: $purple
+  &-upbutton
+    &__link
+      background: $bg-lightgray
+      padding: 35px 0
+      width: 100%
+      justify-content: center
+      align-items: center
+      color: $lightgray
+      text-transform: uppercase
+
+// main
+.main
+  width: 100%
+  background: url('../images/bg-main.jpg') no-repeat top
+  &-section
+    display: flex
+    width: 100%
+    height: 625px
+    margin-top: 170px
+.service-variables
+  flex-direction: column
+  height: 100%
+  &__desc
+    flex-direction: column
+    align-items: flex-end
+    max-width: 50%
+    width: 100%
+    justify-content: center
+    margin-right: 40px
+    .main-text
+      text-align: right
+      font-size: 14px
+      line-height: 21px
+      color: $lightgray
+  &__item
+    position: relative
+    height: 50%
+    justify-content: flex-end
+  &__divider
+    position: absolute
+    height: 8px
+    width: 100%
+    background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+  &__digital &__divider
+    top: 0
+  &__influence &__divider
+    bottom: 0
+  .desc-img
+    width: 41px
+    height: 41px
+    mask-size: cover
+    margin-bottom: 20px
+    background: $lightgray
+  &__digital .desc-img
+    mask-image: url('../icons/digital-icon.svg')
+  &__influence .desc-img
+    mask-image: url('../icons/influence-icon.svg')
+  h5
+    color: $lightgray
+    align-items: center
+    transform: rotate(-90deg)
+    writing-mode: rb-rl
+    font-size: 28px
+    text-transform: uppercase
+    width: 65px
+    justify-content: center
+  &__active
+    background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+    h5 
+      color: #ffffff
+  &__active .desc-img
+    background: $bg-lightgray
+  &__active &__desc
+    .main-text
+      color: $bg-lightgray  
+  &__active &__divider
+    opacity: 0
