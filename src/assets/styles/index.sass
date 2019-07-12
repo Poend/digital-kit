@@ -12,6 +12,7 @@
 body
   width: 100%
 *
+  letter-spacing: 0.02em
   display: flex
   font-family: Proxima Nova !important
   box-sizing: border-box
@@ -42,6 +43,32 @@ a
   font-weight: 300
   &:hover
     color: $darkgray
+.main-btn
+  margin-left: 20px
+  font-size: 18px
+  color: $purple
+  font-weight: 600
+  text-transform: uppercase
+  border: 4px solid $purple
+  // border-image: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+  // border-image-slice: 1
+  border-radius: 100px
+  align-items: center
+  height: 100%
+  max-height: 56px
+  padding: 20px
+.main-btn-shadow
+  font-weight: 500
+  color: #fff
+  border-radius: 50px
+  box-shadow: 0 4px 4px rgba(#000, 0.25)
+  align-items: center
+  padding: 20px
+  line-height: 27px
+  font-size: 18px
+  text-transform: uppercase
+  max-height: 56px
+  background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
 
 // header
 menu, nav
@@ -81,20 +108,6 @@ menu, nav
         background-clip: text
         -webkit-text-fill-color: transparent
         color: #c800ff
-    &__order
-      margin-left: 20px
-      font-size: 18px
-      color: $purple
-      font-weight: 600
-      text-transform: uppercase
-      border: 4px solid $purple
-      // border-image: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
-      // border-image-slice: 1
-      border-radius: 100px
-      align-items: center
-      height: 100%
-      max-height: 56px
-      padding: 20px
     &__wrapper-order
       margin-left: 20px
       justify-content: flex-end
@@ -134,12 +147,14 @@ menu, nav
   position: absolute
   flex-direction: column
   display: none
-  transform: translateY(45px) translateX(-50%)
+  transform: translateY(55px) translateX(-50%)
   left: 50%
   opacity: 0
   width: 100%
   min-width: 280px
   padding: 0 40px
+  transition: all .3s
+  z-index: 10
   &__item
     margin: 25px 0
     justify-content: center
@@ -202,7 +217,7 @@ menu, nav
     margin: 0 50px
     background: #fff
     height: 107px
-    width: 1px
+    width: 2px
   &-links
     width: 100%
     flex-direction: column
@@ -256,17 +271,6 @@ menu, nav
         width: 24px
         height: 24px
         box-sizing: border-box
-    &__order
-      color: #fff
-      border-radius: 50px
-      box-shadow: 0 4px 4px rgba(#000, 0.25)
-      align-items: center
-      padding: 20px
-      line-height: 27px
-      font-size: 18px
-      text-transform: uppercase
-      max-height: 56px
-      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
     &__socials 
       .social-links
         &__vk
@@ -299,7 +303,8 @@ menu, nav
 // main
 .main
   width: 100%
-  background: url('../images/bg-main.jpg') no-repeat top
+  background: url('../images/bg-main.jpg') no-repeat center
+  background-size: cover
   &-section
     display: flex
     width: 100%
@@ -308,13 +313,29 @@ menu, nav
 .service-variables
   flex-direction: column
   height: 100%
+  &__header
+    display: flex
+    justify-content: center
+    transform: rotate(-90deg) translateX(50%) translateY(-50px)
+    h5
+      pointer-events: none
+      height: 100%
+      color: $lightgray
+      align-items: center
+      position: absolute
+      align-items: center
+      writing-mode: rb-rl
+      font-size: 28px
+      font-weight: 500
+      text-transform: uppercase
+      justify-content: center
   &__desc
     flex-direction: column
     align-items: flex-end
-    max-width: 50%
+    max-width: 40%
     width: 100%
     justify-content: center
-    margin-right: 40px
+    margin-right: 100px
     .main-text
       text-align: right
       font-size: 14px
@@ -324,6 +345,24 @@ menu, nav
     position: relative
     height: 50%
     justify-content: flex-end
+    &:hover .main-text, &:hover  h5
+      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+      background-clip: text
+      -webkit-text-fill-color: transparent
+      color: #c800ff
+    &:hover .desc-img
+      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+    &-active
+      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+      h5 
+        color: #ffffff
+    &-active .desc-img
+      background: $bg-lightgray
+    &-active &__desc
+      .main-text
+        color: $bg-lightgray  
+    &-active .service-variables__divider
+      opacity: 0
   &__divider
     position: absolute
     height: 8px
@@ -343,23 +382,52 @@ menu, nav
     mask-image: url('../icons/digital-icon.svg')
   &__influence .desc-img
     mask-image: url('../icons/influence-icon.svg')
-  h5
-    color: $lightgray
+.service-slider
+  box-sizing: border-box
+  padding: 130px
+  align-items: center
+  position: relative
+  justify-content: center
+  flex-direction: column
+  h1 
     align-items: center
     transform: rotate(-90deg)
     writing-mode: rb-rl
     font-size: 28px
     text-transform: uppercase
-    width: 65px
+    width: 650px
+    height: 70px
     justify-content: center
-  &__active
-    background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
-    h5 
-      color: #ffffff
-  &__active .desc-img
-    background: $bg-lightgray
-  &__active &__desc
-    .main-text
-      color: $bg-lightgray  
-  &__active &__divider
-    opacity: 0
+    margin: 0
+    position: absolute
+    left: -250px
+    font-weight: 900
+    font-size: 90px
+    letter-spacing: 10px
+    opacity: 0.03
+    color: $darkgray
+  .main-text
+    margin: 40px 0
+    line-height: 24px
+.slider
+  &-item
+    flex-direction: column
+    h4
+      font-size: 38px
+      font-weight: 500
+      color: $darkgray
+      text-transform: uppercase
+      span
+        color: $lightgray
+  &-pagination
+    display: flex
+    align-items: center
+    &__item
+      margin: 0 10px
+      width: 16px
+      height: 16px
+      border-radius: 100px
+      border: none
+      background: $bg-lightgray
+      &-active
+        background: linear-gradient(250deg,#c800ff 0%,#2a00ff 100%)

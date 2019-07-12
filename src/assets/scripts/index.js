@@ -3,4 +3,22 @@
 
 $(document).ready(function () {
     header('this is string to header.js')
+
+
+    // sub-menu anim
+        $('.nav-list__item').not('.sub-menu').on('mouseenter', function(){
+            $(this).find('.sub-menu').css({
+                transform : 'translateY(36px) translateX(-50%)',
+                opacity : '1',
+                display : 'flex'
+            })
+        })
+        $('.sub-menu').on('mouseleave', function(){
+            $(this).css({
+                transform : 'translateY(55px) translateX(-50%)',
+                opacity : '0'
+            }, setTimeout(function(){
+                $(this).css('display','none');
+            }, 300))
+        })
 })
