@@ -33,6 +33,10 @@ title
 .custom-container-2
   width: 100%
   max-width: 1070px
+  padding: 0 400px 0 130px
+.custom-container-3
+  max-width: 950px
+  width: 100%
 a
   text-decoration: none
   &:hover
@@ -69,7 +73,8 @@ a
   text-transform: uppercase
   max-height: 56px
   background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
-
+.main-text
+  line-height: 24px
 // header
 menu, nav
   display: flex
@@ -154,7 +159,6 @@ menu, nav
   min-width: 280px
   padding: 0 40px
   transition: all .3s
-  z-index: 10
   &__item
     margin: 25px 0
     justify-content: center
@@ -303,13 +307,14 @@ menu, nav
 // main
 .main
   width: 100%
-  background: url('../images/bg-main.jpg') no-repeat center
-  background-size: cover
   &-section
+    background: url('../images/bg-main.jpg') no-repeat center
+    background-size: cover
     display: flex
     width: 100%
     height: 625px
-    margin-top: 170px
+    padding-top: 170px
+    box-sizing: content-box
 .service-variables
   flex-direction: column
   height: 100%
@@ -384,7 +389,6 @@ menu, nav
     mask-image: url('../icons/influence-icon.svg')
 .service-slider
   box-sizing: border-box
-  padding: 130px
   align-items: center
   position: relative
   justify-content: center
@@ -431,3 +435,155 @@ menu, nav
       background: $bg-lightgray
       &-active
         background: linear-gradient(250deg,#c800ff 0%,#2a00ff 100%)
+
+// aboutus 
+h2
+  font-size: 48px
+  color: $lightgray
+  writing-mode: vertical-lr
+  transform: rotate(180deg)
+  text-transform: uppercase
+  font-weight: 500
+  align-items: center
+h3
+  font-size: 24px
+  line-height: 36px
+  color: $bg-lightgray
+  text-transform: uppercase
+  font-weight: 500
+.bordered-icon
+  border: 4px solid $lightgray
+  border-radius: 50px
+  padding: 24px
+.aboutus
+  background: url('../images/bg-second.jpg') no-repeat center
+  &-description
+    opacity: .78
+    background: $bg-lightgray
+  &-header
+    justify-content: flex-end
+    &__block
+      margin: 120px 0
+      padding-right: 200px
+      border-right: 2px solid $lightgray
+      flex-direction: column
+      align-self: center
+      justify-content: center
+    &__img
+      margin-bottom: 28px
+  &-text
+    align-items: center
+    line-height: 24px
+    color: $darkgray
+  &-advantages
+    h3
+      margin: 15px 0
+    padding: 150px 0
+    background: linear-gradient(180deg, rgba(#c800ff, 0.78) 0%, rgba(#2a00ff, 0.78) 100%)
+    .container
+      flex-direction: row
+    .aboutus-advantages__img
+      width: 102px
+      border: solid $bg-lightgray
+    &__item
+      padding: 0 60px
+      align-items: center
+      flex-direction: column
+      img
+        width: 46px
+    &__desc
+      color: $bg-lightgray
+      line-height: 24px
+      text-align: center
+
+// influence marketing
+.sub-header
+  font-size: 24px
+  line-height: 36px
+  color: #e0e0e0
+  text-transform: uppercase
+.influence-marketing
+  background: url('../images/bg-third.jpg') no-repeat center
+  &-text
+    padding-top: 140px
+    background: rgba($bg-lightgray, .78)
+  &-header
+    margin-bottom: 70px
+    flex-direction: row
+    &__text
+      justify-content: center
+      flex-direction: column
+      h2
+        writing-mode: unset
+        transform: rotate(0)
+    &__img
+      justify-content: center
+      margin-right: 30px
+      width: 165px
+  &-desc
+    border-bottom: 2px solid $lightgray
+    padding-bottom: 80px
+    &__item
+  &-stats
+    padding-bottom: 140px
+    background: rgba($bg-lightgray, .78)
+    &__progressbar
+      flex-direction: column
+    &__item
+      flex-direction: column
+      width: 100%
+    h2
+      writing-mode: unset
+      transform: rotate(0)
+      justify-content: center
+      padding: 60px
+    &__bg
+      background: $lightgray
+      width: 100%
+      padding: 4px
+      border-radius: 100px
+    &__active
+      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+      border-top-left-radius: 100px
+      border-bottom-left-radius: 100px
+      width: 80%
+    &__text
+      padding: 20px 0 20px 50px
+      font-size: 42px
+      text-transform: uppercase
+      color: $bg-lightgray
+      align-items: center
+      font-weight: 600
+      span 
+        font-size: 28px
+    &__desc
+      font-size: 24px
+      color: $darkgray
+      padding: 40px
+  &-audience-stats
+    background: linear-gradient(180deg, rgba(#c800ff, .78) 0%, rgba(#2a00ff, .78) 100%)
+    .custom-container-1
+      justify-content: flex-end
+      padding: 140px 200px 140px 0
+      background: rgba($darkgray, .78)
+    .custom-container-2
+      padding: 0
+    &__desc
+      text-transform: uppercase
+      color: $bg-lightgray
+      font-size: 18px
+      text-align: right
+      writing-mode: vertical-lr
+      transform: rotate(180deg)
+      max-height: 175px
+    &__header
+      flex-direction: column
+      align-items: center
+    &__img
+      margin-bottom: 28px
+    &__list
+      flex-direction: column
+    &__item
+      height: 25%
+      align-items: center
+      
