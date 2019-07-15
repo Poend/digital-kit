@@ -10,15 +10,20 @@ $(document).ready(function () {
             $(this).find('.sub-menu').css({
                 transform : 'translateY(36px) translateX(-50%)',
                 opacity : '1',
-                display : 'flex'
+                display : 'flex',
+                'z-index' : '10'
             })
         })
         $('.sub-menu').on('mouseleave', function(){
             $(this).css({
                 transform : 'translateY(55px) translateX(-50%)',
                 opacity : '0'
-            }, setTimeout(function(){
-                $(this).css('display','none');
-            }, 300))
+            })
+            setTimeout(function(){
+                $('.sub-menu').css({
+                    display : 'none',
+                    'z-index' : '10'
+                });
+            }, 300)
         })
 })
