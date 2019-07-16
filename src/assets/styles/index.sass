@@ -37,6 +37,7 @@ title
 .custom-container-3
   max-width: 950px
   width: 100%
+  margin: auto
 a
   text-decoration: none
   &:hover
@@ -586,4 +587,21 @@ h3
     &__item
       height: 25%
       align-items: center
-      
+      background: rgba($darkgray, .5)
+      font-size: 24px
+      line-height: 36px
+      text-transform: uppercase
+      padding: 0 50px
+      box-sizing: border-box
+      font-weight: 500
+      color: $bg-lightgray
+// offer
+.offer.custom-container-3
+  flex-direction: column
+.offer
+  padding: 140px 0 120px 0
+  &-text
+    &__desc-block
+      background: linear-gradient(180deg, rgba(#c800ff, .78) 0%, rgba(#2a00ff, .78) 100%)
+    &__overlay
+      background: url('../images/offer-bg.jpg') no-repeat center
