@@ -477,10 +477,10 @@ h3
     line-height: 24px
     color: $darkgray
   &-advantages
-    h3
-      margin: 15px 0
     padding: 150px 0
     background: linear-gradient(180deg, rgba(#c800ff, 0.78) 0%, rgba(#2a00ff, 0.78) 100%)
+    h3
+      margin: 15px 0
     .container
       flex-direction: row
     .aboutus-advantages__img
@@ -598,10 +598,78 @@ h3
 // offer
 .offer.custom-container-3
   flex-direction: column
+#offer-agency-process
+  background: url('../images/offer-bg-2.jpg') no-repeat center
 .offer
-  padding: 140px 0 120px 0
+  justify-content: center
+  background-color: rgba($bg-lightgray, .78)
+  &-content
+    margin-bottom: 20px
+  &-overlay
+    .custom-container-3
+      padding: 140px 0 120px 0
+      justify-content: center
+      flex-direction: column
+      .main-text 
+        margin-bottom: 10px
   &-text
+    width: 50%
     &__desc-block
-      background: linear-gradient(180deg, rgba(#c800ff, .78) 0%, rgba(#2a00ff, .78) 100%)
-    &__overlay
+      border-radius: 10px
       background: url('../images/offer-bg.jpg') no-repeat center
+      background-size: cover
+    &__overlay
+      border-radius: 10px
+      background: linear-gradient(180deg, rgba(#c800ff, .78) 0%, rgba(#2a00ff, .78) 100%)
+    &__icon
+      flex-direction: column
+      align-items: center
+      padding: 40px
+      .main-text
+        font-size: 24px
+        text-align: center
+        color: $bg-lightgray
+        line-height: 41px
+      img
+        width: 74px
+        margin-bottom: 40px
+  &-list
+    margin-left: -30px
+    flex-direction: column
+    justify-content: space-around
+    &__item
+      font-size: 24px
+      align-items: center
+      color: $lightgray
+      text-transform: uppercase
+      font-weight: 500
+      &:before
+        margin-right: 10px
+        content: ""
+        width: 60px
+        height: 60px
+        background: url('../icons/list-mark.svg')
+// agency
+.agency
+  padding: 90px 0
+  background: linear-gradient(180deg, rgba(#c800ff, .78) 0%, rgba(#2a00ff, .78) 100%)
+  .bordered-icon
+    border: solid $bg-lightgray
+    width: 102px
+    margin-bottom: 20px
+  h2
+    writing-mode: unset
+    transform: rotate(0)
+    justify-content: center
+    font-size: 48px
+    color: $bg-lightgray
+    margin-bottom: 60px
+  h3
+    justify-content: center
+    font-size: 16px
+    margin-bottom: 20px
+  &-items
+  &-item
+    align-items: center
+    padding: 0 50px
+    flex-direction: column

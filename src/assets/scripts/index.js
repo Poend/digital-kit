@@ -22,7 +22,7 @@ $(document).ready(function () {
             setTimeout(function(){
                 $('.sub-menu').css({
                     display : 'none',
-                    'z-index' : '10'
+                    'z-index' : '1'
                 });
             }, 300)
         })
