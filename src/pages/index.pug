@@ -7,7 +7,7 @@ block main
   main.main
     section.main-section
       .service-variables.custom-container-1
-        a.service-variables__item.service-variables__digital(href="#")
+        a.service-variables__item.service-variables__item-non-active.service-variables__digital(href="#")
           .service-variables__divider
           .service-variables__desc
             .desc-img
@@ -157,9 +157,57 @@ block main
                 img(src="../assets/icons/agency-3.svg", alt="")
               h3 Предложения для тендеров
               p.aboutus-advantages__desc.main-text Мы разрабатываем совместные коммерческие предложения
+      .process
+        .container
+          .process-header
+            .process-header__img
+              img(src="../assets/icons/process-1.svg", alt="")
+            h2 Процесс работы
+          .process-list
+            ul.process-list__counter-items
+              li.process-list__counter-item 1
+              li.process-list__counter-item 2
+              li.process-list__counter-item 3
+              li.process-list__counter-item 4
+              li.process-list__counter-item 5
+              li.process-list__counter-item 6
+              li.process-list__counter-item 7
+              li.process-list__counter-item 8
+            ul.process-list__items
+              li.process-list__item Заявка на рекламу &nbsp;
+                span у блогеров
+              li.process-list__item Выявление ЦА &nbsp;
+                span и потребностей клиента
+              li.process-list__item Разработка &nbsp;
+                span креативной концепции
+              li.process-list__item Определение &nbsp;
+                span социальных сетей
+              li.process-list__item Подбор &nbsp;
+                span блогеров для Рекламы
+              li.process-list__item Производство &nbsp;
+                span фото и видео материалов
+              li.process-list__item Размещение &nbsp;
+                span рекламных материалов
+              li.process-list__item Полный анализ &nbsp;
+                span рекламной компании
+    section.cases
+      .container
+        .cases-header
+          .cases-header__img
+            img(src="../assets/icons/cases-1.svg", alt="")
+          h2 Кейсы
+        .cases-content
+          p.main-text За годы работы, мы заслужили доверие крупных компаний. В нашем багаже более 150 успешных проектов.
+          .cases-content__logotypes
+            img(src="../assets/icons/cases-logo-1.svg", alt="")
+            img(src="../assets/icons/cases-logo-2.svg", alt="")
+            img(src="../assets/icons/cases-logo-3.svg", alt="")
+            img(src="../assets/icons/cases-logo-4.svg", alt="")
+            img(src="../assets/icons/cases-logo-5.svg", alt="")
+    section.contacts
+      .container
+        .contacts-header
           
-
-
 
 block footer
   include ../assets/blocks/footer/footer

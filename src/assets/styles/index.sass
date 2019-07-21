@@ -351,22 +351,24 @@ menu, nav
     position: relative
     height: 50%
     justify-content: flex-end
-    &:hover .main-text, &:hover  h5
-      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
-      background-clip: text
-      -webkit-text-fill-color: transparent
-      color: #c800ff
-    &:hover .desc-img
-      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+    &-non-active
+      &:hover .main-text, &:hover h5
+        background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+        background-clip: text
+        -webkit-text-fill-color: transparent
+        color: #c800ff
+      &:hover .desc-img
+        background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
     &-active
       background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
       h5 
         color: #ffffff
-    &-active .desc-img
-      background: $bg-lightgray
-    &-active &__desc
+    &-active
+      .desc-img
+        background: #ffffff !important
+    &-active
       .main-text
-        color: $bg-lightgray  
+        color: #ffffff
     &-active .service-variables__divider
       opacity: 0
   &__divider
@@ -673,3 +675,85 @@ h3
     align-items: center
     padding: 0 50px
     flex-direction: column
+// process
+.process
+  background: rgba($bg-lightgray, .78)
+  padding: 130px 0
+  .container
+    display: flex
+    flex-direction: row
+  &-header
+    flex-direction: column
+    align-items: center
+    max-width: 33%
+    width: 100%
+    h2
+      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+      background-clip: text
+      -webkit-text-fill-color: transparent
+      color: #c800ff
+    &__img
+      margin-bottom: 30px
+  &-list
+    padding-left: 60px
+    max-width: 67%
+    width: 100%
+    display: flex
+    flex-direction: row
+    &__items
+      justify-content: space-around
+      flex-direction: column
+    &__item
+      text-transform: uppercase
+      font-size: 22px
+      font-weight: 600
+      color: $lightgray
+      background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+      background-clip: text
+      -webkit-text-fill-color: transparent
+      color: #c800ff
+      span 
+        color: $lightgray
+        background-clip: text
+        -webkit-text-fill-color: $lightgray
+        // background: $lightgray
+    &__counter
+      &-items
+        margin-right: 30px
+        padding: 0 15px
+        background: linear-gradient(180deg,rgba(#c800ff, .2) 30%,#2a00ff 100%)
+        flex-direction: column
+        justify-content: space-around
+      &-item
+        color: $bg-lightgray
+        font-size: 22px
+        font-weight: 500
+        justify-content: center
+
+// cases
+.cases
+  background: $darkgray
+  padding: 130px 0
+  .container
+    flex-direction: row
+  &-header
+    width: 33%
+    flex-direction: column
+    align-items: center
+    &__img
+      margin-bottom: 30px
+    h2
+      color: $bg-lightgray
+  &-content
+    flex-direction: column
+    width: 67%
+    padding-left: 50px
+    justify-content: space-around
+    .main-text
+      font-weight: 300
+      color: $bg-lightgray
+      border-bottom: 1px solid $bg-lightgray
+      padding-bottom: 30px
+    &__logotypes
+      justify-content: space-between
+      align-items: center
