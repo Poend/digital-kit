@@ -1,1 +1,14 @@
 .popup
+    .popup-overlay
+        .popup-content
+            .popup-content__header
+                h2 Оставить заявку
+            .popup-content__form
+                form(action="")
+                    input(type="text" placeholder="Имя" name="Имя").popup-content__form-item
+                    input(type="phone" placeholder="Номер телефона" name="Номер телефона").popup-content__form-item
+                    input(type="text" placeholder="Email" name="E-mail").popup-content__form-item
+                    .popup-content__form-button
+                        button.main-btn(type="submit") Оставить заявку
+                        p.policy Нажимая на кнопку «Оставить заявку», Вы даете согласие на обработку Ваших персональных данных.
+            a(href="#").popup-content__close-btn
