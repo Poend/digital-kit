@@ -7,23 +7,9 @@ $(document).ready(function () {
 
     // sub-menu anim
         $('.nav-list__item').not('.sub-menu').on('mouseenter', function(){
-            $(this).find('.sub-menu').css({
-                transform : 'translateY(36px) translateX(-50%)',
-                opacity : '1',
-                display : 'flex',
-                'z-index' : '10'
-            })
-        })
+            $(this).find('.sub-menu').addClass('sub-menu-active');
+        });
         $('.sub-menu').on('mouseleave', function(){
-            $(this).css({
-                transform : 'translateY(55px) translateX(-50%)',
-                opacity : '0'
-            })
-            setTimeout(function(){
-                $('.sub-menu').css({
-                    display : 'none',
-                    'z-index' : '1'
-                });
-            }, 300)
-        })
+            $(this).removeClass('sub-menu-active');
+        });
 })
