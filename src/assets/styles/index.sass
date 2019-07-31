@@ -85,6 +85,8 @@ menu, nav
   position: absolute
   background: rgba(#f6f6f6, .5)
   border-bottom: 1px solid $lightgray
+  &__mobile
+    display: none
   &-top
     padding: 25px 0
     justify-content: space-between
@@ -152,7 +154,7 @@ menu, nav
   border-radius: 0px 0px 12px 12px
   position: absolute
   flex-direction: column
-  display: none
+  display: flex
   transform: translateY(55px) translateX(-50%)
   left: 50%
   opacity: 0
@@ -160,6 +162,8 @@ menu, nav
   min-width: 280px
   padding: 0 40px
   transition: all .3s
+  visibility: hidden
+  z-index: 11
   &__item
     margin: 25px 0
     justify-content: center
@@ -168,6 +172,10 @@ menu, nav
     line-height: 27px
     font-size: 18px
     color: $lightgray
+  &-active
+    opacity: 1
+    transform: translateY(36px) translateX(-50%)
+    visibility: visible
 .nav-list
   width: 100%
   max-width: 600px
@@ -548,12 +556,22 @@ h3
     &__item
       flex-direction: column
       width: 100%
+      &:nth-of-type(1) .influence-marketing-stats__active
+        width: 92%
+      &:nth-of-type(2) .influence-marketing-stats__active
+        width: 58%
+      &:nth-of-type(3) .influence-marketing-stats__active
+        width: 88%
+      &:nth-of-type(4) .influence-marketing-stats__active
+        width: 65%
     h2
       writing-mode: unset
       transform: rotate(0)
       justify-content: center
       padding: 60px
     &__bg
+      height: 102px
+      position: relative
       background: $lightgray
       width: 100%
       padding: 4px
@@ -562,14 +580,16 @@ h3
       background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
       border-top-left-radius: 100px
       border-bottom-left-radius: 100px
-      width: 80%
     &__text
-      padding: 20px 0 20px 50px
+      padding-left: 50px
+      width: 100%
       font-size: 42px
       text-transform: uppercase
       color: $bg-lightgray
       align-items: center
+      align-self: center
       font-weight: 600
+      position: absolute
       span 
         font-size: 28px
     &__desc
@@ -1003,8 +1023,12 @@ h3
 @media (max-width: 480px)
   .container
     padding: 0 20px
+  .main-text
+    font-size: 16px
   h1
     display: none
+  h2
+    font-size: 28px
   h4
     display: inline
     line-height: 56px
@@ -1013,7 +1037,134 @@ h3
     span
       display: inline 
   .header
-    display: none
+    z-index: 20
+    position: fixed
+    background: $bg-lightgray
+    &__desktop
+      display: none
+    &__mobile
+      display: flex
+    &-top
+      display: none
+    .burger-btn, .logo, .header-top__categories
+      width: 33.3%
+      height: 100%
+    .burger-btn
+      justify-content: flex-start
+      &__item
+        width: 12px
+        height: 12px
+        background: $lightgray
+        border-radius: 50px
+      &__link
+        flex-direction: column
+        justify-content: space-around
+    .logo
+      justify-content: center
+    &-top
+      height: 117px
+      flex-direction: row
+      align-items: center
+      justify-content: center
+      padding: 25px 20px
+      &__categories
+        flex-direction: column
+        align-items: flex-end
+        justify-content: space-around
+        font-size: 18px
+        a 
+          font-weight: 500
+    &-bottom 
+      padding: 0
+      width: 100%
+      flex-direction: column
+      &__head
+        align-items: center
+        justify-content: space-between
+        height: 117px
+        margin: 0
+        background: $darkgray
+        flex-direction: row
+      .burger-back-btn
+        &__link
+          background: url('../icons/Arrow.svg') no-repeat center
+          background-size: cover
+          width: 30px 
+          height: 30px
+      &__socials
+        flex-direction: column
+        .social-links__vk
+          width: 24px
+          height: 23px
+          mask-image: url('../icons/vk-logo.svg')
+          mask-size: cover
+          background: $bg-lightgray
+          margin-bottom: 20px
+          &:hover
+            background: $darkgray
+        .social-links__instagram
+          width: 24px
+          height: 23px
+          mask-image: url('../icons/insta-logo.svg')
+          mask-size: cover
+          background: $bg-lightgray
+          &:hover
+            background: $darkgray
+      &__menu
+        background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+        .nav-list
+          margin: 55px 0
+          height: 100%
+          min-height: 335px
+          flex-direction: column
+          &__item
+            flex-direction: column
+            align-items: center
+          &-item__link
+            color: $bg-lightgray
+            font-weight: 500
+            font-size: 48px
+      .header-top
+        &__contacts
+          padding: 0 45px
+          margin: 45px 0
+          width: 100%
+          flex-direction: column
+          justify-content: center
+          align-items: flex-start
+        &__wrapper
+          &-order
+            width: 100%
+            margin-top: 40px
+            margin-left: 0
+            .order-button
+              justify-content: center
+              height: 100px
+              max-width: 220px
+              width: 100%
+              padding: 0
+          &-phone
+            &:before
+              width: 42px
+              height: 42px
+              background-size: cover
+            span
+              margin-left: 15px
+              font-size: 28px
+      .sub-menu
+        visibility: visible
+        opacity: 1
+        display: flex
+        position: relative
+        transform: none
+        left: 0
+        background: transparent
+        &__link
+          font-size: 25px
+
+
+
+    
   .main
     .custom-container-2
       padding: 0 30px
@@ -1063,5 +1214,350 @@ h3
           transform: rotate(0)
           h5
             position: relative
-        
-              
+  .aboutus
+    background-size: cover
+    &-description
+      background: rgba($bg-lightgray, .78)
+      padding-top: 80px
+      flex-direction: column
+      padding-bottom: 50px
+    &-header
+      padding: 0 20px
+      &__img
+        margin-bottom: 0
+        margin-right: 20px
+      &__block
+        border-right: none
+        border-bottom: 2px solid $lightgray
+        width: 100%
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+        padding: 0
+        margin: 0
+        padding-bottom: 50px
+        h2
+          transform: rotate(0)
+          writing-mode: unset      
+    &-text.custom-container-2
+      padding-top: 50px
+    &-advantages
+      padding: 50px 0
+      .container
+        flex-direction: column
+      &__item
+        padding: 0
+        margin-bottom: 50px
+        &:last-of-type
+          margin-bottom: 0
+  .influence-marketing
+    background-position: center center
+    background-size: cover
+    &-text
+      padding-top: 80px
+    &-header
+      margin-bottom: 40px
+      &__text
+        line-height: 1.2
+      &__img
+        width: auto
+        margin-right: 20px
+    &-desc
+      padding-bottom: 50px
+      flex-direction: column
+      &__item
+        margin-bottom: 40px
+        &:last-of-type
+          margin-bottom: 0
+    &-stats
+      padding-bottom: 40px
+      h2
+        padding: 40px 10px
+        text-align: center
+        line-height: 41px
+      &__text
+        font-size: 28px
+        span
+          font-size: 18px
+      &__desc
+        padding: 20px 10px 40px 10px
+        text-align: center
+        line-height: 36px
+    &-audience-stats
+      flex-direction: column
+      .custom-container-1
+        padding: 80px 20px 60px 20px
+      .custom-container-2
+        padding: 0
+      &__header
+        flex-direction: row
+      &__desc.main-text
+        transform: rotate(0)
+        writing-mode: unset
+        font-size: 18px
+        text-align: left
+        padding-right: 40px
+      &__img
+        margin-bottom: 0
+        margin-right: 20px
+        border: solid $bg-lightgray
+      &__item
+        padding: 50px 30px 50px 20px
+        font-size: 18px
+        &:nth-of-type(1)
+          background: rgba($darkgray, .66)
+          width: 90%
+        &:nth-of-type(2)
+          background: rgba($darkgray, .48)
+          width: 80%
+        &:nth-of-type(3)
+          background: rgba($darkgray, .24)
+          width: 60%
+        &:nth-of-type(4)
+          background: rgba($darkgray, .28)
+          width: 70%
+  .services
+    &-overlay
+      background: rgba($bg-lightgray, .78)
+    background-position: center center
+    background-size: cover
+    &-overlay
+      padding: 80px 0
+    .custom-container-3
+      padding: 0 20px
+    &-header
+      margin-bottom: 50px
+      flex-direction: column
+      &__img
+        width: auto
+        margin-right: 20px
+      &__head
+        width: 100%
+        padding-bottom: 50px
+        border-bottom: 2px solid $lightgray
+      &__text
+        width: 100%
+        padding-top: 50px
+        .main-text
+          border-bottom: none
+          padding: 0
+    &-items
+      display: flex
+      flex-direction: column
+    &-item
+      height: 220px
+      background-size: cover !important
+      margin-bottom: 60px
+      &:last-of-type
+        margin-bottom: 0
+  #offer-agency-process
+    .offer
+      .influence-marketing-header
+        padding: 0 20px
+      .custom-container-3
+        padding: 70px 0
+        > .main-text
+          display: none
+      &-content
+        flex-direction: column
+        margin-right: 0
+      &-text
+        width: 100%
+      &-list
+        padding-top: 20px
+        justify-content: center
+        align-items: center
+        margin-left: 0
+        &__item
+          text-align: center
+          padding: 20px
+          font-size: 18px
+          &:before
+            display: none
+    .agency
+      padding: 70px 0
+      h2
+        font-size: 28px
+        text-align: center
+        line-height: 41px
+      &-items
+        flex-direction: column
+      &-item
+        padding: 0 30px
+        margin-bottom: 40px
+        &:last-of-type
+          margin-bottom: 0
+    .process
+      padding: 80px 0
+      .container
+        flex-direction: column
+      &-header
+        flex-direction: row
+        width: 100%
+        max-width: 100%
+        margin-bottom: 60px
+        &__img
+          margin-bottom: 0
+          margin-right: 20px
+        h2 
+          transform: rotate(0)
+          writing-mode: unset
+          line-height: 41px
+      &-list
+        max-width: 100%
+        width: 100%
+        padding-left: 0
+        &__counter
+          &-items
+            margin-right: 20px
+          &-item
+            font-size: 15px
+        &__item
+          display: inline
+          font-size: 15px
+          line-height: 22px
+          padding: 20px 0
+          span 
+            display: inline
+  .cases
+    padding: 80px 0
+    .container
+      flex-direction: column
+    &-header
+      width: 100%
+      flex-direction: row
+      max-width: 100%
+      border-bottom: 2px solid $bg-lightgray
+      padding-bottom: 50px
+      &__img
+        margin-bottom: 0
+        margin-right: 20px
+      h2 
+        transform: rotate(0)
+        writing-mode: unset
+    &-content
+      padding-left: 0
+      padding-top: 50px
+      max-width: 100%
+      width: 100%
+      .main-text
+        border-bottom: none
+      &__logotypes
+        justify-content: flex-start
+        flex-wrap: wrap
+        img
+          padding: 0 10px
+          box-sizing: border-box 
+          width: 33.3%
+          margin-bottom: 30px
+  .contacts
+    padding: 80px 0
+    .custom-container-3
+      padding: 0 20px
+    &-header
+      margin-bottom: 50px
+      &__img
+        width: auto
+        margin-right: 20px
+    &-content
+      flex-direction: column
+    &-links
+      width: 100%
+      max-width: 100%
+    &-text
+      width: 100%
+      max-width: 100%
+      margin-top: 50px
+      &__socials
+        padding: 50px 0
+  .questions
+    padding: 80px 0
+    .custom-container-3
+      padding: 0 20px
+      flex-direction: column
+    &-header
+      width: 100%
+      border-right: none
+      padding-right: 0
+      &__text
+        h2 
+          margin-bottom: 30px
+          font-size: 48px
+          text-align: left
+      &__desc
+        .main-text
+          text-align: left
+          border-bottom: 2px solid $lightgray
+          padding-bottom: 50px
+    &-form 
+      width: 100%
+      padding-left: 0
+      padding-top: 50px
+      &__button
+        flex-direction: column
+        align-items: center
+        button
+          margin-right: 0 !important
+          max-width: 220px !important
+          font-size: 18px
+          padding: 12px !important
+      &__policy
+        width: 100%
+        .main-text
+          margin-top: 20px
+          text-align: center
+          font-size: 12px
+  .footer
+    padding-top: 50px
+    &-container
+      flex-direction: column
+    &-logo
+      width: 100%
+      align-items: center
+      max-width: 100%
+      &__desc
+        max-width: 220px
+        margin-top: 20px
+        padding-bottom: 50px
+        border-bottom: 2px solid $lightgray
+    &-divider
+      display: none
+    &-links 
+      &__contacts
+        flex-direction: column
+        align-items: flex-start
+        padding: 50px 20px 0 20px
+      &__wrapper
+        &-phone
+          margin-bottom: 40px
+          a
+            margin-left: 20px
+            font-size: 28px
+          &:before
+            width: 42px
+            height: 42px
+        &-mail 
+          margin-bottom: 40px
+          a
+            margin-left: 20px
+            font-size: 18px
+          &:before
+            width: 42px
+            height: 42px
+        &-order 
+          align-self: center
+      &__socials 
+        justify-content: center
+        margin: 50px 0
+    .social-links
+      &__vk
+        width: 42px
+        height: 42px
+      &__instagram
+        margin-left: 40px
+        width: 42px
+        height: 42px
+    &-upbutton
+      &__link
+        font-size: 28px
+        padding: 61px 0

@@ -1,5 +1,5 @@
 header.header
-    .header-container.container 
+    .header-container.container.header__desktop
         .header-top
             .header-top__logo   
                 a(href="#")
@@ -41,4 +41,57 @@ header.header
                         li.nav-list__item.nav-list__social-links 
                             a.social-links__vk(href="#", target="_blank")
                             a.social-links__instagram(href="#", target="_blank")
+    .header-container.header__mobile
+        .header-top.container
+            .burger-btn
+                a(href="#").burger-btn__link
+                    .burger-btn__item
+                    .burger-btn__item
+                    .burger-btn__item
+            .logo
+                img(src="../assets/icons/logo-mobile.svg", alt="")
+            .header-top__categories
+                a.categories-link.categories-link__active(href="#", data-target="digital") Digital
+                a.categories-link(href="#", data-target="influence") Influence
+        .header-bottom
+            .header-bottom__head.container
+                .burger-back-btn
+                    a(href="#").burger-back-btn__link
+                .header-bottom__brandname
+                    img(src="../assets/icons/brandname.svg", alt="")
+                .header-bottom__socials
+                    a.social-links__vk(href="#", target="_blank")
+                    a.social-links__instagram(href="#", target="_blank")
+            .header-bottom__menu 
+                menu
+                    nav
+                        ul.nav-list
+                            li.nav-list__item
+                                a.nav-list-item__link.default-link(href="#") О нас
+                            li.nav-list__item
+                                a.nav-list-item__link.default-link(href="#") Услуги
+                                ul.sub-menu
+                                    li.sub-menu__item
+                                        a.sub-menu__link.default-link(href="#") Разработка и создание сайтов
+                                    li.sub-menu__item
+                                        a.sub-menu__link.default-link(href="#") Продвижение
+                                    li.sub-menu__item
+                                        a.sub-menu__link.default-link(href="#") SMM
+                                    li.sub-menu__item
+                                        a.sub-menu__link.default-link(href="#") Веб-аналитика
+                                    li.sub-menu__item
+                                        a.sub-menu__link.default-link(href="#") Контекст
+                                    li.sub-menu__item
+                                        a.sub-menu__link.default-link(href="#") Обучение
+                            li.nav-list__item
+                                a.nav-list-item__link.default-link(href="#") Кейсы
+                            li.nav-list__item
+                                a.nav-list-item__link.default-link(href="#") Контакты
+            .header-bottom__contacts 
+                .header-top__contacts
+                    a.header-top__wrapper-phone(href="tel:+79182860112")
+                        span.header-top__phone +7 918 286 01 12
+                    a.header-top__wrapper-order(href="#")
+                        .main-btn.order-button Оставить заявку      
+
 
