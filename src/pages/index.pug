@@ -113,6 +113,60 @@ block main
             li.influence-marketing-audience-stats__item 48% из них - Это люди в возрасте 25 - 44 Лет  
             li.influence-marketing-audience-stats__item 24% 44 - 56 Лет  
             li.influence-marketing-audience-stats__item 28% 12 - 24 Лет 
+    section.services
+      .services-overlay
+        .custom-container-3
+          .services-header
+            .services-header__head
+              .services-header__img.bordered-icon
+                  img(src="../assets/icons/services-1.svg", alt="")
+              .services-header__text
+                  h2 Услуги
+            .services-header__text
+              p.main-text Мы предоставляем большой спектр услуг по разработке и сопровождению сайтов, продвижению социальных сетей.
+          .services-items
+            .services-item
+              .services-item__overlay
+                .services-item__content
+                  p Разработка и создание сайтов
+                  .services-item__price
+                    p От 5000 руб.
+                  a(href="#").services-item__link.main-btn-shadow Подробнее
+            .services-item
+              .services-item__overlay
+                .services-item__content
+                  p Продвижение
+                  .services-item__price
+                    p От 7000 руб.
+                  a(href="#").services-item__link.main-btn-shadow Подробнее
+            .services-item
+              .services-item__overlay
+                .services-item__content
+                  p SMM
+                  .services-item__price
+                    p От 12000 руб.
+                  a(href="#").services-item__link.main-btn-shadow Подробнее
+            .services-item
+              .services-item__overlay
+                .services-item__content
+                  p Веб-аналитика
+                  .services-item__price
+                    p От 4000 руб.
+                  a(href="#").services-item__link.main-btn-shadow Подробнее
+            .services-item
+              .services-item__overlay
+                .services-item__content
+                  p Контекст
+                  .services-item__price
+                    p От 3000 руб.
+                  a(href="#").services-item__link.main-btn-shadow Подробнее
+            .services-item
+              .services-item__overlay
+                .services-item__content
+                  p Обучение
+                  .services-item__price
+                    p От 8000 руб.
+                  a(href="#").services-item__link.main-btn-shadow Подробнее
     section#offer-agency-process
       .offer
         .offer-overlay
@@ -190,30 +244,14 @@ block main
                 span рекламных материалов
               li.process-list__item Полный анализ &nbsp;
                 span рекламной компании
-    section.cases
-      .container
-        .cases-header
-          .cases-header__img
-            img(src="../assets/icons/cases-1.svg", alt="")
-          h2 Кейсы
-        .cases-content
-          p.main-text За годы работы, мы заслужили доверие крупных компаний. В нашем багаже более 150 успешных проектов.
-          .cases-content__logotypes
-            img(src="../assets/icons/cases-logo-1.svg", alt="")
-            img(src="../assets/icons/cases-logo-2.svg", alt="")
-            img(src="../assets/icons/cases-logo-3.svg", alt="")
-            img(src="../assets/icons/cases-logo-4.svg", alt="")
-            img(src="../assets/icons/cases-logo-5.svg", alt="")
-    section.contacts
-      .container
-        .contacts-header
-          .contacts-header__img.bordered-icon
-            img(src="../assets/icons/contacts-1.svg", alt="")
-          .contacts-header__text
-            h2 Контакты
-          
+    block cases
+      include ../assets/blocks/cases/cases
+    block contacts
+      include ../assets/blocks/contacts/contacts
+    block questions
+      include ../assets/blocks/questions/questions
 
-block footer
+block footer  
   include ../assets/blocks/footer/footer
 
 block popup
