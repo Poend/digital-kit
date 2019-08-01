@@ -4,6 +4,7 @@
 $(document).ready(function () {
     header('this is string to header.js')
 
+    blocksAnimAtScroll();
     popup();
     anchorAnim();
     subMenuAnim();
@@ -11,6 +12,21 @@ $(document).ready(function () {
     subMenuClicks();
     catClicks();           
 })
+
+function blocksAnimAtScroll (){
+    $(window).scroll(function(){
+        var target = $('.cases');
+        var targetPos = target.offset().top;
+        var winHeight = $(window).height();
+        var scrollToElem = targetPos - winHeight;
+        var winScrollTop = $(this).scrollTop();
+        console.log(winScrollTop);
+        if(winScrollTop > scrollToElem){
+            //сработает когда пользователь доскроллит к элементу с классом .elem
+            console.log('rabotaet');
+        }
+    });
+}
 
 function popup(){
     $('.popup-event').on('click', function(){
