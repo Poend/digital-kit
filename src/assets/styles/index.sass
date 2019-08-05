@@ -528,6 +528,7 @@ h3
   text-transform: uppercase
 .influence-marketing
   background: url('../images/bg-third.jpg') no-repeat center
+  background-size: cover
   &-text
     padding-top: 140px
     background: rgba($bg-lightgray, .78)
@@ -576,6 +577,9 @@ h3
       width: 100%
       padding: 4px
       border-radius: 100px
+      &-scrolled 
+        .influence-marketing-stats__active
+          
     &__active
       background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
       border-top-left-radius: 100px
@@ -1061,6 +1065,7 @@ h3
     span
       display: inline 
   .header
+    translate: all .3s
     z-index: 20
     position: fixed
     background: $bg-lightgray
@@ -1072,6 +1077,16 @@ h3
     .burger-btn, .logo, .header-top__categories
       width: 33.3%
       height: 100%
+    &-scrolled
+      .header-top
+        padding: 10px 20px
+        height: 70px
+      .header-bottom__head
+        height: 70px
+        padding: 10px 20px
+      .header-bottom__socials
+        .social-links__vk
+          margin-bottom: 5px
     .burger-btn
       justify-content: flex-start
       &__item
@@ -1092,7 +1107,10 @@ h3
         justify-content: space-around
     .logo
       justify-content: center
+      img
+        object-fit: contain
     &-top
+      transition: all .3s
       z-index: 20
       display: flex
       height: 117px
@@ -1125,6 +1143,7 @@ h3
         opacity: 1
         visibility: visible
       &__head
+        transition: all .3s
         width: 100%
         max-width: 100%
         align-items: center
@@ -1142,6 +1161,7 @@ h3
       &__socials
         flex-direction: column
         .social-links__vk
+          transition: all .3s
           width: 24px
           height: 23px
           mask-image: url('../icons/vk-logo.svg')

@@ -4,28 +4,37 @@
 $(document).ready(function () {
     header('this is string to header.js')
 
-    blocksAnimAtScroll();
+    headerScrolled();
     popup();
     anchorAnim();
     subMenuAnim();
     burgerClicks();
     subMenuClicks();
-    catClicks();           
+    catClicks(); 
+    blocksAnimAtScroll();          
 })
 
 function blocksAnimAtScroll (){
-    $(window).scroll(function(){
-        var target = $('.cases');
+    $(window).scroll(function infMarketing(){
+        var target = $('.influence-marketing-stats__active');
         var targetPos = target.offset().top;
         var winHeight = $(window).height();
         var scrollToElem = targetPos - winHeight;
         var winScrollTop = $(this).scrollTop();
-        console.log(winScrollTop);
-        if(winScrollTop > scrollToElem){
-            //сработает когда пользователь доскроллит к элементу с классом .elem
-            console.log('rabotaet');
+        if((winScrollTop - winHeight/2)){
+            console.log('1');
         }
     });
+}
+
+function headerScrolled() {
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 0){
+            $('.header').addClass('header-scrolled');
+        } else {
+            $('.header').removeClass('header-scrolled');
+        }
+    })
 }
 
 function popup(){
@@ -116,9 +125,9 @@ function catClicks(){
         $('.cat-link').removeClass('service-variables__item-non-active');
         $('.cat-link').removeClass('categories-link__active');
         if($(this).data('target') === 'digital'){
-            $('.service-variables__item[data-target=digital').addClass('service-variables__item-active');
-            $('.categories-link[data-target=digital').addClass('categories-link__active');
-            $('.service-variables__item[data-target=influence').addClass('service-variables__item-non-active');
+            $('.service-variables__item[data-target=digital]').addClass('service-variables__item-active');
+            $('.categories-link[data-target=digital]').addClass('categories-link__active');
+            $('.service-variables__item[data-target=influence]').addClass('service-variables__item-non-active');
             $('.influence-content').css({'display':'none'});
             $('.digital-content').css({'display':'block'});
             var target = $('.digital-content').eq(0);
@@ -128,14 +137,14 @@ function catClicks(){
                 }, 300);
             } else {
                 $('html, body').animate({
-                    scrollTop: $(target).offset().top - $('header').height()
+                    scrollTop: $(target).offset().top - 70
                 }, 300);
             }
         }
         if($(this).data('target') === 'influence'){
-            $('.service-variables__item[data-target=influence').addClass('service-variables__item-active');
-            $('.categories-link[data-target=influence').addClass('categories-link__active');
-            $('.service-variables__item[data-target=digital').addClass('service-variables__item-non-active');
+            $('.service-variables__item[data-target=influence]').addClass('service-variables__item-active');
+            $('.categories-link[data-target=influence]').addClass('categories-link__active');
+            $('.service-variables__item[data-target=digital]').addClass('service-variables__item-non-active');
             $('.influence-content').css({'display':'block'});
             $('.digital-content').css({'display' : 'none'});
             var target = $('.influence-content').eq(0);
@@ -145,7 +154,7 @@ function catClicks(){
                 }, 300);
             } else {
                 $('html, body').animate({
-                    scrollTop: $(target).offset().top - $('header').height()
+                    scrollTop: $(target).offset().top - 70
                 }, 300);
             }
         }
