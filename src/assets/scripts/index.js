@@ -15,14 +15,28 @@ $(document).ready(function () {
 })
 
 function blocksAnimAtScroll (){
-    $(window).scroll(function infMarketing(){
-        var target = $('.influence-marketing-stats__active');
+    $(window).scroll(function (){
+        var target = $('.influence-marketing-stats__item');
         var targetPos = target.offset().top;
         var winHeight = $(window).height();
         var scrollToElem = targetPos - winHeight;
         var winScrollTop = $(this).scrollTop();
-        if((winScrollTop - winHeight/2)){
-            console.log('1');
+        if((winScrollTop + winHeight/2) > targetPos){
+            target.addClass('influence-marketing-stats__item-scrolled');
+        } else {
+            target.removeClass('influence-marketing-stats__item-scrolled');
+        }
+    });
+    $(window).scroll(function (){
+        var target = $('.influence-marketing-audience-stats__item');
+        var targetPos = target.offset().top;
+        var winHeight = $(window).height();
+        var scrollToElem = targetPos - winHeight;
+        var winScrollTop = $(this).scrollTop();
+        if((winScrollTop + winHeight/2) > targetPos){
+            target.addClass('influence-marketing-audience-stats__item-scrolled');
+        } else {
+            target.removeClass('influence-marketing-audience-stats__item-scrolled');
         }
     });
 }
@@ -39,6 +53,7 @@ function headerScrolled() {
 
 function popup(){
     $('.popup-event').on('click', function(){
+        event.preventDefault();
         $('.popup').toggleClass('popup-active');
         $('html').css('overflow','hidden');
     })
