@@ -7,14 +7,14 @@ block main
   main.main
     section.main-section
       .service-variables.custom-container-1
-        a.service-variables__item.service-variables__item-non-active.service-variables__digital(href="#")
+        a.cat-link.service-variables__item.service-variables__item-active.service-variables__digital(href="#" data-target="digital")
           .service-variables__divider
           .service-variables__desc
             .desc-img
             p.main-text Увеличим Ваши продажи, звонки и заявки с Вашего сайта. Для продвижения используем наиболее эффективные современные технологии и собственные разработки
           .service-variables__header
             h5 Digital
-        a.service-variables__item.service-variables__item-active.service-variables__influence(href="#")
+        a.cat-link.service-variables__item.service-variables__item-non-active.service-variables__influence(href="#" data-target="influence")
           .service-variables__divider
           .service-variables__desc
             .desc-img
@@ -59,7 +59,7 @@ block main
               img(src="../assets/icons/advantages-3.svg", alt="")
             h3 Преимущество 3
             p.aboutus-advantages__desc.main-text Мы – команда профессионалов в области разработки и продвижения сайтов.
-    section.influence-marketing
+    section.influence-marketing.influence-content
       .influence-marketing-text
         .container.custom-container-3
           .influence-marketing-header
@@ -113,7 +113,7 @@ block main
             li.influence-marketing-audience-stats__item 48% из них - Это люди в возрасте 25 - 44 Лет  
             li.influence-marketing-audience-stats__item 24% 44 - 56 Лет  
             li.influence-marketing-audience-stats__item 28% 12 - 24 Лет 
-    section.services
+    section.services.digital-content
       .services-overlay
         .custom-container-3
           .services-header
@@ -122,7 +122,7 @@ block main
                   img(src="../assets/icons/services-1.svg", alt="")
               .services-header__text
                   h2 Услуги
-            .services-header__text
+            .services-header__desc
               p.main-text Мы предоставляем большой спектр услуг по разработке и сопровождению сайтов, продвижению социальных сетей.
           .services-items
             .services-item
@@ -167,7 +167,7 @@ block main
                   .services-item__price
                     p От 8000 руб.
                   a(href="#").services-item__link.main-btn-shadow Подробнее
-    section#offer-agency-process
+    section.offer-agency-process.influence-content
       .offer
         .offer-overlay
           .custom-container-3
@@ -250,9 +250,9 @@ block main
       include ../assets/blocks/contacts/contacts
     block questions
       include ../assets/blocks/questions/questions
+    
 
 block footer  
   include ../assets/blocks/footer/footer
-
 block popup
   include ../assets/blocks/popup/popup

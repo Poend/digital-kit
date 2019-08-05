@@ -464,7 +464,7 @@ menu, nav
 h2
   font-size: 48px
   color: $lightgray
-  writing-mode: vertical-lr
+  writing-mode: vertical-rl
   transform: rotate(180deg)
   text-transform: uppercase
   font-weight: 500
@@ -609,7 +609,7 @@ h3
       color: $bg-lightgray
       font-size: 18px
       text-align: right
-      writing-mode: vertical-lr
+      writing-mode: vertical-rl
       transform: rotate(180deg)
       max-height: 175px
     &__header
@@ -630,10 +630,22 @@ h3
       box-sizing: border-box
       font-weight: 500
       color: $bg-lightgray
+      &:nth-of-type(1)
+        background: rgba($darkgray, .66)
+        width: 90%
+      &:nth-of-type(2)
+        background: rgba($darkgray, .48)
+        width: 80%
+      &:nth-of-type(3)
+        background: rgba($darkgray, .24)
+        width: 60%
+      &:nth-of-type(4)
+        background: rgba($darkgray, .28)
+        width: 70%
 // offer
 .offer.custom-container-3
   flex-direction: column
-#offer-agency-process
+.offer-agency-process
   background: url('../images/offer-bg-2.jpg') no-repeat center
 .offer
   justify-content: center
@@ -830,6 +842,9 @@ h3
       margin-right: 30px
       width: 165px
       justify-content: center
+      img
+        width: 46px
+        height: 46px
     &__text
       h2
         writing-mode: unset
@@ -958,7 +973,7 @@ h3
       h2
         writing-mode: unset
         transform: rotate(0)
-    &__text 
+    &__desc 
       width: 50%
       .main-text
         padding-bottom: 30px
@@ -1020,7 +1035,16 @@ h3
       justify-content: center
       line-height: 8px
 // media
-@media (max-width: 480px)
+@media (max-width: 1400px)
+  .custom-container-2
+    padding: 0 100px 0 100px
+@media (max-width: 1200px)
+  .custom-container-1, .custom-container-2, .custom-container-3
+    width: 100%
+    max-width: 100%
+  nav
+    display: flex
+    justify-content: center
   .container
     padding: 0 20px
   .main-text
@@ -1043,9 +1067,8 @@ h3
     &__desktop
       display: none
     &__mobile
+      overflow: auto
       display: flex
-    &-top
-      display: none
     .burger-btn, .logo, .header-top__categories
       width: 33.3%
       height: 100%
@@ -1056,12 +1079,22 @@ h3
         height: 12px
         background: $lightgray
         border-radius: 50px
+        transition: all .3s
+        opacity: 0
+        transform: translateX(-100px)
+      &__active
+        .burger-btn__item
+          transform: translateX(0)
+          opacity: 1
       &__link
+        width: 100%
         flex-direction: column
         justify-content: space-around
     .logo
       justify-content: center
     &-top
+      z-index: 20
+      display: flex
       height: 117px
       flex-direction: row
       align-items: center
@@ -1075,19 +1108,34 @@ h3
         a 
           font-weight: 500
     &-bottom 
+      position: fixed
+      z-index: 21
+      height: 100vh
       padding: 0
       width: 100%
       flex-direction: column
+      overflow: hidden
+      transition: all .3s
+      visibility: hidden
+      opacity: 0
+      transform: translateX(-100%)
+      &__active
+        overflow: auto
+        transform: translateX(0)
+        opacity: 1
+        visibility: visible
       &__head
+        width: 100%
+        max-width: 100%
         align-items: center
         justify-content: space-between
-        height: 117px
+        padding: 26px 20px
         margin: 0
         background: $darkgray
         flex-direction: row
       .burger-back-btn
         &__link
-          background: url('../icons/Arrow.svg') no-repeat center
+          background: url('../icons/arrow.svg') no-repeat center
           background-size: cover
           width: 30px 
           height: 30px
@@ -1114,16 +1162,17 @@ h3
         background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
         .nav-list
           margin: 55px 0
-          height: 100%
-          min-height: 335px
           flex-direction: column
           &__item
+            padding: 15px 0
             flex-direction: column
             align-items: center
           &-item__link
             color: $bg-lightgray
             font-weight: 500
             font-size: 48px
+      &__contacts
+        background: $bg-lightgray
       .header-top
         &__contacts
           padding: 0 45px
@@ -1135,34 +1184,50 @@ h3
         &__wrapper
           &-order
             width: 100%
+            justify-content: center
             margin-top: 40px
             margin-left: 0
+            &:before
+              width: 48px
+              height: 48px
             .order-button
               justify-content: center
               height: 100px
               max-width: 220px
               width: 100%
               padding: 0
+              height: 48px
+              font-size: 15px
           &-phone
+            width: 100%
+            justify-content: center
             &:before
               width: 42px
               height: 42px
               background-size: cover
             span
               margin-left: 15px
-              font-size: 28px
+              font-size: 22px
       .sub-menu
-        visibility: visible
-        opacity: 1
+        visibility: hidden
+        opacity: 0
         display: flex
         position: relative
         transform: none
         left: 0
         background: transparent
+        transition: all .5s
+        height: 100%
+        max-height: 0px
+        overflow: hidden
         &__link
           font-size: 25px
-
-
+        &__active
+          visibility: visible
+          opacity: 1
+          height: 100%
+          max-height: 500px
+          overflow: auto
 
     
   .main
@@ -1286,6 +1351,7 @@ h3
     &-audience-stats
       flex-direction: column
       .custom-container-1
+        justify-content: flex-start
         padding: 80px 20px 60px 20px
       .custom-container-2
         padding: 0
@@ -1335,12 +1401,13 @@ h3
         width: 100%
         padding-bottom: 50px
         border-bottom: 2px solid $lightgray
-      &__text
+      &__desc
         width: 100%
         padding-top: 50px
         .main-text
           border-bottom: none
           padding: 0
+          color: $lightgray
     &-items
       display: flex
       flex-direction: column
@@ -1350,7 +1417,7 @@ h3
       margin-bottom: 60px
       &:last-of-type
         margin-bottom: 0
-  #offer-agency-process
+  .offer-agency-process
     .offer
       .influence-marketing-header
         padding: 0 20px
@@ -1464,6 +1531,8 @@ h3
     &-links
       width: 100%
       max-width: 100%
+      a
+        font-size: 20px
     &-text
       width: 100%
       max-width: 100%
@@ -1480,6 +1549,7 @@ h3
       border-right: none
       padding-right: 0
       &__text
+        justify-content: center
         h2 
           margin-bottom: 30px
           font-size: 48px
@@ -1490,6 +1560,7 @@ h3
           border-bottom: 2px solid $lightgray
           padding-bottom: 50px
     &-form 
+      justify-content: center
       width: 100%
       padding-left: 0
       padding-top: 50px
@@ -1524,11 +1595,13 @@ h3
       display: none
     &-links 
       &__contacts
+        justify-content: center
         flex-direction: column
         align-items: flex-start
         padding: 50px 20px 0 20px
       &__wrapper
         &-phone
+          align-self: center
           margin-bottom: 40px
           a
             margin-left: 20px
@@ -1537,6 +1610,7 @@ h3
             width: 42px
             height: 42px
         &-mail 
+          align-self: center
           margin-bottom: 40px
           a
             margin-left: 20px

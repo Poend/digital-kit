@@ -8,17 +8,17 @@ header.header
                 a.header-top__wrapper-phone(href="tel:+79182860112")
                     span.header-top__phone +7 918 286 01 12
                 a.header-top__wrapper-order(href="#")
-                    .main-btn.order-button Оставить заявку              
+                    .main-btn.order-button.popup-event Оставить заявку              
         .header-bottom 
             .header-bottom__categories
-                a.categories-link.categories-link__active(href="#", data-target="digital") Digital
-                a.categories-link(href="#", data-target="influence") Influence
+                a.cat-link.categories-link.categories-link__active(href="#", data-target="digital") Digital
+                a.cat-link.categories-link(href="#", data-target="influence") Influence
             .header-bottom__nav
                 menu
                     nav
                        ul.nav-list
                         li.nav-list__item
-                            a.nav-list-item__link.default-link(href="#") О нас
+                            a.nav-list-item__link.default-link(href="aboutus") О нас
                         li.nav-list__item
                             a.nav-list-item__link.default-link(href="#") Услуги
                             ul.sub-menu
@@ -35,24 +35,24 @@ header.header
                                 li.sub-menu__item
                                     a.sub-menu__link.default-link(href="#") Обучение
                         li.nav-list__item
-                            a.nav-list-item__link.default-link(href="#") Кейсы
+                            a.nav-list-item__link.default-link(href="cases") Кейсы
                         li.nav-list__item
-                            a.nav-list-item__link.default-link(href="#") Контакты
+                            a.nav-list-item__link.default-link(href="contacts") Контакты
                         li.nav-list__item.nav-list__social-links 
                             a.social-links__vk(href="#", target="_blank")
                             a.social-links__instagram(href="#", target="_blank")
     .header-container.header__mobile
         .header-top.container
-            .burger-btn
+            .burger-btn.burger-btn__active
                 a(href="#").burger-btn__link
                     .burger-btn__item
                     .burger-btn__item
                     .burger-btn__item
-            .logo
+            a(href="#").logo
                 img(src="../assets/icons/logo-mobile.svg", alt="")
             .header-top__categories
-                a.categories-link.categories-link__active(href="#", data-target="digital") Digital
-                a.categories-link(href="#", data-target="influence") Influence
+                a.cat-link.categories-link.categories-link__active(href="#", data-target="digital") Digital
+                a.cat-link.categories-link(href="#", data-target="influence") Influence
         .header-bottom
             .header-bottom__head.container
                 .burger-back-btn
@@ -67,7 +67,7 @@ header.header
                     nav
                         ul.nav-list
                             li.nav-list__item
-                                a.nav-list-item__link.default-link(href="#") О нас
+                                a.nav-list-item__link.default-link(href="aboutus") О нас
                             li.nav-list__item
                                 a.nav-list-item__link.default-link(href="#") Услуги
                                 ul.sub-menu
@@ -84,14 +84,14 @@ header.header
                                     li.sub-menu__item
                                         a.sub-menu__link.default-link(href="#") Обучение
                             li.nav-list__item
-                                a.nav-list-item__link.default-link(href="#") Кейсы
+                                a.nav-list-item__link.default-link(href="cases") Кейсы
                             li.nav-list__item
-                                a.nav-list-item__link.default-link(href="#") Контакты
+                                a.nav-list-item__link.default-link(href="contacts") Контакты
             .header-bottom__contacts 
                 .header-top__contacts
                     a.header-top__wrapper-phone(href="tel:+79182860112")
                         span.header-top__phone +7 918 286 01 12
                     a.header-top__wrapper-order(href="#")
-                        .main-btn.order-button Оставить заявку      
+                        .main-btn.order-button.popup-event Оставить заявку      
 
 
