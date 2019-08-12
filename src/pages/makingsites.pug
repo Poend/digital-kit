@@ -1,0 +1,77 @@
+extends ../assets/templates/template_default
+
+block header
+  include ../assets/blocks/header/header
+
+block main 
+    main.main.content-page
+        section.main-section
+            .service-variables__divider
+            .content-wrapper.wrapper
+                .custom-container-3 
+                    .contacts-header
+                        .contacts-header__img.bordered-icon
+                            img(src="../assets/icons/makingsites-icon.svg", alt="")
+                        .contacts-header__text
+                            h2 Разработка и создание сайтов
+                    p.main-text Создание интернет-проектов — неотъемлемая часть современного мира. В настоящее время буквально ни одна компания, ни один человек, занимающийся бизнесом, продвижением своих товаров или услуг не сможет обойтись без хорошего интернет-ресурса. Если Вы задумаетесь, то наверняка не вспомните рекламу или полученную визитную карточку без упоминания адреса сайта. Интернет, в настоящее время, самая большая площадка для высокотехнологичного маркетинга.
+                    p.main-text Популярность создания сайтов с каждым годом растет. По разным данным на конец января 2019 года в России зарегистрировано чуть более 6,5 миллионов сайтов! И это только сайты, принадлежащие Рунету, то есть те которые располагаются на доменах .RU, .РФ.
+                    p.main-text.main-text-selected Процесс разработки Вашего сайта:
+                    ol.main-list(type="1", start="1")
+                        li 1.   Формирование целей и задач сайта.   
+                        li 2.   Анализ бизнеса и конкурентов
+                        li 3.   Анализ целевой аудитории веб-проекта, составление аватара потенциального покупателя 
+                        li 4.   Создание структуры и прототипа сайта 
+                        li 5.   Разработка дизайна 
+                        li 6.   Верстка и программирование;
+                        li 7.   Техническая оптимизация страниц под SEO-продвижение;
+                        li 8.   Написание продающего текста под дизайн-страницу;
+                        li 9.   Подключение ресурса к хостингу.
+                    .content-price
+                        p.content-price__amount Стоимость:&nbsp;
+                            span от 20900 руб.
+                    .content-service
+                        .content-service__item
+                            .content-service__item-header
+                                img(src="../assets/icons/ms-icon-1.svg", alt="")
+                                p.content-service__item-text Landing page
+                            .content-service__item-content
+                                p.main-text Одностраничный сайт, пользующийся большой популярностью. Задача landing page — побудить посетителя к конкретному действию. Это может быть, например, заполнение заявки на услугу, покупка товара, запись на курс, подписка на рассылку, переход на основной сайт — т.е. действие, являющееся главной задачей. Вне зависимости от специфики, задача лендинг пейдж — конвертировать посетителя в клиента.
+                                a(href="#").main-btn.order-button.popup-event Заказать услугу
+                        .content-service__item
+                            .content-service__item-header
+                                img(src="../assets/icons/ms-icon-2.svg", alt="")
+                                p.content-service__item-text Корпоративный
+                            .content-service__item-content
+                                p.main-text Многофункциональный сайт, имеющий внутренние страниц. Это не просто сайт компании, это хорошее репутационное решение, подчеркивание профессионализма, начало новых деловых отношений с клиентами и партнерами. Корпоративные сайты рассчитаны на содержание большого количества информации, в связи с чем их структура прорабатывается определенным образом, исходя из особенностей того или иного бизнеса.
+                                a(href="#").main-btn.order-button.popup-event Заказать услугу
+                        .content-service__item
+                            .content-service__item-header
+                                img(src="../assets/icons/ms-icon-3.svg", alt="")
+                                p.content-service__item-text Интернет-магазин
+                            .content-service__item-content
+                                p.main-text Создать интернет-магазин - значит вести дела удобно, мобильно, быстро. В интернет-магазине появляется возможность сразу добавить товар в виртуальную корзину, оформить заказ, оплатить его и выбрать способ доставки. Удобная возможность интеграции базы 1С - база данных синхронизируется с интернет-магазином. Поиск по сайту является необходимым атрибутом интернет-магазина, ведь каталог товаров может быть очень разнообразным.
+                                a(href="#").main-btn.order-button.popup-event Заказать услугу
+                        .content-service__item
+                            .content-service__item-header
+                                img(src="../assets/icons/ms-icon-4.svg", alt="")
+                                p.content-service__item-text Новостной ресурс
+                            .content-service__item-content
+                                p.main-text Информационный сайт - это мощный новостной ресурс, погружающий пользователя в изучение свежей, интересующей его информации. Тематика такого сайта может быть абсолютно любой, ведь любая информация ежедневно обновляется. Это могут быть как новости политики, культуры, искусства, экономики или спорта, а может быть даже новые тенденции в мире моды. Все, что угодно! Новостной сайт можно даже сравнить с выпусками новостей.
+                                a(href="#").main-btn.order-button.popup-event Заказать услугу
+        
+        
+        
+        
+        block cases
+            include ../assets/blocks/cases/cases
+        block contacts
+            include ../assets/blocks/contacts/contacts
+        block questions
+            include ../assets/blocks/questions/questions
+
+
+block footer  
+  include ../assets/blocks/footer/footer
+block popup
+  include ../assets/blocks/popup/popup

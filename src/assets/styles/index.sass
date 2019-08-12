@@ -1055,11 +1055,104 @@ h3
       width: 50%
       justify-content: center
       line-height: 8px
+
+.main-list
+  flex-direction: column
+  li 
+    margin-top: 20px
+.content
+  &-page
+    .main-text
+      margin-top: 30px
+    .main-text-selected
+      font-weight: 500
+    .main-section
+      height: auto
+  &-wrapper
+    padding: 130px
+    background: rgba($bg-lightgray, .78)
+    .custom-container-3
+      flex-direction: column
+  &-price
+    margin-top: 40px
+    font-size: 48px
+    color: $lightgray
+    font-weight: 600
+    padding-bottom: 30px
+    border-bottom: 2px solid $lightgray
+    &__amount
+      span
+        display: inline
+        background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+        background-clip: text
+        -webkit-text-fill-color: transparent
+        color: #c800ff
+  &-service
+    flex-wrap: wrap
+    padding-top: 80px
+    &__item
+      box-sizing: border-box
+      width: 100%
+      max-width: 50%
+      flex-direction: column
+      &:nth-of-type(1), &:nth-of-type(2)
+        margin-bottom: 120px
+      &:nth-of-type(2n+1)
+        padding-right: 20px
+      &:nth-of-type(2n)
+        padding-left: 20px
+      &-header
+        flex-direction: column
+        img
+          max-width: 102px
+      &-text
+        margin-top: 40px
+        display: inline
+        background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+        background-clip: text
+        -webkit-text-fill-color: transparent
+        font-size: 28px
+        text-transform: uppercase
+        font-weight: 600
+        &:after
+          margin-top: 15px
+          height: 4px
+          width: 100%
+          max-width: 102px
+          background: linear-gradient(180deg,#c800ff 0%,#2a00ff 100%)
+          content: ""
+          display: flex
+      &-content
+          flex-direction: column
+          a 
+            margin-left: 0
+            margin-top: 40px
+            max-width: 220px
+
 // media
 @media (max-width: 1400px)
   .custom-container-2
     padding: 0 100px 0 100px
 @media (max-width: 1200px)
+  .content
+    &-wrapper
+      padding: 0 20px
+    &-price
+      &__amount
+        line-height: 61px
+        flex-direction: column
+    &-service
+      padding-top: 50px
+      &__item
+        margin-bottom: 80px !important
+        width: 100%
+        max-width: 100%
+        &:last-of-type
+          margin-bottom: 0
+        &:nth-of-type(2n)
+          padding-left: 0
+        &:nth-of-type(2n+1)
+          padding-right: 0
   .custom-container-1, .custom-container-2, .custom-container-3
     width: 100%
     max-width: 100%
